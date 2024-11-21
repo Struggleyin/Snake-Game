@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇游戏</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            position: relative;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .game-over {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            display: none;
+        }
+        .start-screen {
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .score-text {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        canvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        .game-logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>贪吃蛇大作战</h1>
+    <div class="game-container">
+        <div id="startScreen" class="start-screen">
+            <img src="./logo.png" alt="游戏 Logo" class="game-logo">
+            <button id="startButton" class="button">开始游戏</button>
+        </div>
+        <div id="gameOver" class="game-over">
+            <div id="scoreText" class="score-text"></div>
+            <button id="restartButton" class="button">重新开始</button>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 
